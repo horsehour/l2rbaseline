@@ -1,0 +1,57 @@
+SVM-rank Experiments on LETOR 3.0	
+=================================
+
+Author: Thorsten Joachims
+Date: 21 March 2009
+
+The experiments were conducted with SVM-rank V1.00 available at 
+
+    http://svmlight.joachims.org/svm_rank.html
+
+SVM-rank solves the same optimization problem as SVM-light with the '-z p' option, but is much faster (on average around 
+a second on my travel laptop with a 1.2Ghz Pentium). 
+
+For all datasets the learner was called with
+
+    svm_rank_learn -c <C> -e 0.001 -l 1 train.txt model
+
+where <C> takes the values (0.00001,0.00002,0.00005,0.0001,0.0002,0.0005,0.001,0.002,0.005,0.01,0.02,0.05,0.1,0.2,0.5). 
+For each fold, the <C> value with the best MAP performance on the validation set was selected and its test set performance 
+is reported. The <C> value that achieved best validation set performance is shown in the filename of the results files and 
+the log files of each run. In particular, they are:
+
+2003_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold1_l1_c0.1_e0.001.log
+2003_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold2_l1_c0.002_e0.001.log
+2003_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold3_l1_c0.002_e0.001.log
+2003_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold4_l1_c0.02_e0.001.log
+2003_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold5_l1_c0.05_e0.001.log
+2003_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold1_l1_c0.2_e0.001.log
+2003_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold2_l1_c0.5_e0.001.log
+2003_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold3_l1_c0.005_e0.001.log
+2003_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold4_l1_c0.01_e0.001.log
+2003_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold5_l1_c0.2_e0.001.log
+2003_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold1_l1_c0.2_e0.001.log
+2003_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold2_l1_c0.1_e0.001.log
+2003_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold3_l1_c0.01_e0.001.log
+2003_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold4_l1_c0.005_e0.001.log
+2003_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold5_l1_c0.5_e0.001.log
+2004_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold1_l1_c0.2_e0.001.log
+2004_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold2_l1_c0.1_e0.001.log
+2004_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold3_l1_c0.5_e0.001.log
+2004_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold4_l1_c0.5_e0.001.log
+2004_hp_dataset/QueryLevelNorm/cv_l1_e0.001/fold5_l1_c0.01_e0.001.log
+2004_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold1_l1_c0.005_e0.001.log
+2004_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold2_l1_c0.001_e0.001.log
+2004_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold3_l1_c0.2_e0.001.log
+2004_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold4_l1_c0.0001_e0.001.log
+2004_np_dataset/QueryLevelNorm/cv_l1_e0.001/fold5_l1_c0.0001_e0.001.log
+2004_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold1_l1_c0.5_e0.001.log
+2004_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold2_l1_c0.2_e0.001.log
+2004_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold3_l1_c0.5_e0.001.log
+2004_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold4_l1_c0.5_e0.001.log
+2004_td_dataset/QueryLevelNorm/cv_l1_e0.001/fold5_l1_c0.1_e0.001.log
+OHSUMED/QueryLevelNorm/cv_l1_e0.001/fold1_l1_c0.0002_e0.001.log
+OHSUMED/QueryLevelNorm/cv_l1_e0.001/fold2_l1_c0.002_e0.001.log
+OHSUMED/QueryLevelNorm/cv_l1_e0.001/fold3_l1_c0.01_e0.001.log
+OHSUMED/QueryLevelNorm/cv_l1_e0.001/fold4_l1_c0.02_e0.001.log
+OHSUMED/QueryLevelNorm/cv_l1_e0.001/fold5_l1_c0.01_e0.001.log
